@@ -4,7 +4,6 @@ class CategoriesController < ApplicationController
   def index #I think this is only being used by the Family Controller
     if params[:family_id]
       @family = Family.find_by(id: params[:family_id])
-      @categories = Category.where('family_id = ?', params[:family_id])
       if params[:category]
         @instruments = Instrument.where('category_id = ?', params[:category][:category_id])
       else
