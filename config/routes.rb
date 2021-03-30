@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  get '/signup', to: "users#new", as: "signup"
+  get '/signup', to: "users#new" # note: '/signup' = signup_path
   post '/users', to: "users#create"
   
-  get '/login', to: 'sessions#new', as: "login"
+  get '/login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   post '/logout', to: 'sessions#destroy'
 
-  resources :users
+  resources :users, except: [:new, :create]
 
   resources :families, only: [:index, :show] do
     resources :categories
