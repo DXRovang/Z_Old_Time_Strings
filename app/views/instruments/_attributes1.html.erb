@@ -1,0 +1,19 @@
+<div><%= form.label "Maker" %></div>
+
+<%= form.text_field :maker_name, list: "makers_autocomplete" %>
+<datalist id="makers_autocomplete">
+<% Maker.all.each do |maker| %>
+<option value="<%= maker.name %>">
+<% end %>
+</datalist> 
+
+<div><%= form.label "Price"%></div>  
+<%= form.number_field :price%>
+<div><%= form.label "Year"%></div>
+<%= form.number_field :year%>
+<div><%= form.label "Color"%></div>
+<%= form.text_field :color%>
+<div><%= form.label "Material"%></div>
+<%= form.text_field :material%>
+<div><%= form.label "Frets"%></div>
+<%= form.number_field :frets%>

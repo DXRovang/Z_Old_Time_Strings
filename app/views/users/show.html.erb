@@ -1,0 +1,10 @@
+<div class="title"><h1><%= @user.username %>'s Page</h1>
+<%= @user.email %></div>
+<h3>Available Instruments</h3>
+
+<ul>
+<% @user.instruments.each do |instrument| %>
+<li><%= link_to instrument.category.name, instrument_path(instrument) %>(<%= instrument.year %>) - 
+<%= instrument.maker.name %></li>
+<% end %>
+</ul>

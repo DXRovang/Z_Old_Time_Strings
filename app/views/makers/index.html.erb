@@ -1,0 +1,26 @@
+<h1>Makers#index</h1>
+
+<%= form_tag makers_path, method: :get do %>
+  <%= label_tag "Search by Maker Name" %>
+  <%= text_field_tag :search, params[:search]  %>
+  <%= submit_tag "Search", name: nil%>
+<% end %>
+
+<% if @makers %>
+  <% @makers.each do |maker| %>
+    <h3><%= maker.name %></h3>
+  <% end %>
+  <ul>
+  <% @makers.each do |maker| %>
+    <% maker.instruments.each do |instrument| %>
+      <li>
+      <p><%= instrument.category.name %>(<%= instrument.year %>)</p>
+      <p>Sold by: <%= link_to instrument.user.username, user_path(instrument.user) %></p>
+      </li>
+    <% end %>
+  <% end %>
+  </ul>
+<% end %>
+
+
+

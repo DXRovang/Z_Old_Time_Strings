@@ -1,0 +1,6 @@
+<h1>Families#show</h1>
+
+<%= @family.name %>
+<% @family.categories.each do |category| %>
+<li><%= category.name %></li>
+<% end %>

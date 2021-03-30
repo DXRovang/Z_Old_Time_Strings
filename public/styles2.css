@@ -1,0 +1,77 @@
+body{
+  background-color: rgba(255, 174, 0, 0.742);
+}
+
+.title{
+  text-align: center;
+}
+.banjo{
+  float: left;
+  box-sizing: border-box;
+  width: 28%;
+  text-align: center;
+  border-style: solid;
+  border-color: lime;
+  border-width: 5px;
+  margin: 5px;
+  max-height: 600px;
+  padding: 15px;
+}
+.guitar{
+  float: left;
+  box-sizing: border-box;
+  width: 44%;
+  text-align: center;
+  border-style: solid;
+  border-color: lime;
+  border-width: 5px;
+  margin: 5px;
+  max-height: 600px;
+  padding: 15px;
+}
+.mando{
+  float: left;
+  box-sizing: border-box;
+  width: 24%;
+  text-align: center;
+  border-style: solid;
+  border-color: lime;
+  border-width: 5px;
+  margin: 5px;
+  max-height: 600px;
+  padding: 15px;
+}
+.page{
+  text-align: center;
+}
+.search{
+  border-style: solid;
+  border-color: lime;
+  border-width: 5px;
+  padding: 10px;
+  margin: 5px;
+  width: 250px;
+}
+.display{
+  float: right;
+  border-style: solid;
+  border-color: lightskyblue;
+  border-width: 5px;
+  padding: 10px;
+  margin: 5px;
+  width: 250px;
+}
+.button {
+  float: left;
+  width: 33%;
+  text-align: center;
+}
+.inst_show{
+  align-content: center;
+  border-style: solid;
+  border-color: lime;
+  border-width: 5px;
+  padding: 10px;
+  margin: 5px;
+  width: 250px;
+}

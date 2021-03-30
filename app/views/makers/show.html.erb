@@ -1,0 +1,11 @@
+<h1>Makers#show</h1>
+
+<h3><%= @maker.name %></h3>
+
+<ul>
+<% @maker.instruments.each do |instrument| %>
+<li><p><%= instrument.category.name %>(<%= instrument.year %>)</p>
+<p>Sold by: <%= link_to instrument.user.username, user_path(instrument.user) %></p>
+</li>
+<% end %>
+</ul>

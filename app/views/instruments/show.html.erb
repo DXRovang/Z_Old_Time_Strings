@@ -1,0 +1,78 @@
+<div class="inst_show"><h1>For Sale!</h1><br>
+
+<div>Category:
+<%= @instrument.category.name %></div>
+<div>Maker:
+<%= @instrument.maker.name %></div>
+
+<% if @instrument.year %>
+<div>Year:
+<%= @instrument.year %></div>
+<% end %>
+
+<% if @instrument.color != "" && @instrument.color != nil %>
+<div>Color:
+<%= @instrument.color %></div>
+<% end %>
+
+<% if @instrument.material != "" && @instrument.material != nil %>
+<div>Material:
+<%= @instrument.material %></div>
+<% end %>
+
+<% if @instrument.frets %>
+<div>Frets:
+<%= @instrument.frets %></div>
+<% end %>
+
+<% if @instrument.back != "" && @instrument.back != nil %>
+<div>Back:
+<%= @instrument.back %></div
+<% end %>
+
+<% if @instrument.body != "" && @instrument.body != nil %>
+<div>Body:
+<%= @instrument.body %></div>
+<% end %>
+
+<% if @instrument.neck != "" && @instrument.neck != nil %>
+<div>Neck:
+<%= @instrument.neck %></div>
+<% end %>
+
+<% if @instrument.bridge != "" && @instrument.bridge != nil %>
+<div>Bridge:
+<%= @instrument.bridge %></div>
+<% end %>
+
+<% if @instrument.sound_hole != "" && @instrument.sound_hole != nil %>
+<div>Sound Hole:
+<%= @instrument.sound_hole %></div>
+<% end %>
+
+<% if @instrument.price %>
+<div>Price: $
+<%= '%.2f' % @instrument.price %>USD</div>
+<% end %>
+
+<% if @instrument.description != "" && @instrument.description != nil %>
+<div>Description:
+<%= @instrument.description %></div>
+<% end %>
+
+<% if session[:user_id] == @instrument.user.id %>
+
+<%= link_to "Edit", edit_instrument_path(@instrument.id) %>
+
+<%= button_to "Delete", @instrument, method: :delete, data: { confirm: "Really?" } %>
+<% end %>
+
+<br><br>
+
+<div>Username:
+<%= link_to @instrument.user.username, user_path(@instrument.user) %></div>
+
+<div>Email:
+<%= @instrument.user.email %></div>
+
+</div>
