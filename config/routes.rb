@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :users, except: [:new, :create]
 
   resources :families, only: [:index, :show] do
-    resources :categories
+    resources :categories, only: [:index]
   end
 
   resources :categories, only: [:index, :show]
