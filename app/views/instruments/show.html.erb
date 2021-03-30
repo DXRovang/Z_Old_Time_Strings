@@ -1,4 +1,9 @@
-<div class="inst_show"><h1>For Sale!</h1><br>
+<div class="inst_show">
+<% if @instrument.for_sale == true %>
+  <h1>For Sale!</h1>
+<% else %>
+  <h1>Currently Not For Sale</h1>
+<% end %>
 
 <div>Category:
 <%= @instrument.category.name %></div>
@@ -50,7 +55,7 @@
 <%= @instrument.sound_hole %></div>
 <% end %>
 
-<% if @instrument.price %>
+<% if @instrument.price && @instrument.for_sale == true%>
 <div>Price: $
 <%= '%.2f' % @instrument.price %>USD</div>
 <% end %>
@@ -59,6 +64,7 @@
 <div>Description:
 <%= @instrument.description %></div>
 <% end %>
+</div>
 
 <% if session[:user_id] == @instrument.user.id %>
 
@@ -75,4 +81,3 @@
 <div>Email:
 <%= @instrument.user.email %></div>
 
-</div>

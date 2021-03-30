@@ -3,8 +3,20 @@
 <h3>Available Instruments</h3>
 
 <ul>
-<% @user.instruments.each do |instrument| %>
+<% @user.instruments.order(:category_id).each do |instrument| %>
+<% if instrument.for_sale == true %>
 <li><%= link_to instrument.category.name, instrument_path(instrument) %>(<%= instrument.year %>) - 
 <%= instrument.maker.name %></li>
+<% end %>
+<% end %>
+</ul>
+
+<h3>Currently Unavailable</h3>
+<ul>
+<% @user.instruments.order(:category_id).each do |instrument| %>
+<% if instrument.for_sale == false %>
+<li><%= link_to instrument.category.name, instrument_path(instrument) %>(<%= instrument.year %>) - 
+<%= instrument.maker.name %></li>
+<% end %>
 <% end %>
 </ul>

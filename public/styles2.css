@@ -67,7 +67,7 @@ body{
   text-align: center;
 }
 .inst_show{
-  align-content: center;
+  text-align: center;
   border-style: solid;
   border-color: lime;
   border-width: 5px;

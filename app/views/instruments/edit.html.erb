@@ -51,8 +51,10 @@ Mandolin
   <%= form.text_field :sound_hole%>
 <% end %>
 
+<div><%= form.label "For Sale"%></div>
+     <%= form.text_field :for_sale%>
 <div><%= form.label "Description"%></div>
-<%= form.text_area :description%>
+     <%= form.text_area :description%>
 
 <div><%= form.submit "Edit Instrument"%></div> 
 <% end %>
