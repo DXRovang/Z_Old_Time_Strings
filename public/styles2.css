@@ -1,6 +1,10 @@
 body{
   background-color: rgba(255, 174, 0, 0.742);
 }
+.nav ul li{
+  list-style-type: none;
+  float: left;
+}
 
 .title{
   text-align: center;

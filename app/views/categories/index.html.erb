@@ -22,7 +22,7 @@
 
 <% @instruments.each do |instrument|%>
   <div class="search">
-  <li><%= link_to instrument.year, instrument_path(instrument) %> <%= instrument.maker.name %> 
+  <li><%= instrument.year %> <%= link_to instrument.maker.name, instrument_path(instrument) %> 
   (seller: <%= link_to instrument.user.username, user_path(instrument.user_id) %>)
   </li>
   </div>
