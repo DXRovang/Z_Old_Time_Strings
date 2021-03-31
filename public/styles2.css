@@ -6,7 +6,12 @@ body{
   float: left;
 }
 .show{
-  color: red;
+  color:lime;
+  background-color: black;
+  border-style: solid;
+  border-color:purple;
+  border-width: 5px;
+  margin: 55px;
 }
 .title{
   text-align: center;
@@ -80,4 +85,5 @@ body{
   padding: 10px;
   margin: 5px;
   width: 250px;
+  background-color: lightseagreen
 }

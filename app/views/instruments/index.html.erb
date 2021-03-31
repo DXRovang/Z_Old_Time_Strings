@@ -1,4 +1,4 @@
-<h1>All Instruments</h1>
+<div class="show title"><h1>All Instruments</h1></div>
 <% @instruments.order(:category_id).each do |i| %>
 <% category = Category.find_by(id: i.category_id) %>
 <li>(<%= i.year %>) <%= link_to category.name, instrument_path(i) %> by <%= i.maker.name %></li>
