@@ -5,10 +5,9 @@ body{
   list-style-type: none;
   float: left;
 }
-.login{
-  
+.show{
+  color: red;
 }
-
 .title{
   text-align: center;
 }
