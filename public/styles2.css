@@ -78,12 +78,13 @@ body{
   text-align: center;
 }
 .inst_show{
+  align-self: center;
   text-align: center;
   border-style: solid;
   border-color: lime;
   border-width: 5px;
-  padding: 10px;
+  padding: 5px 10px 20px;
   margin: 5px;
   width: 250px;
-  background-color: lightseagreen
+  background-color: rgb(182, 236, 234)
 }

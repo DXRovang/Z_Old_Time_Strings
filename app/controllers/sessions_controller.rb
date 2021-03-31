@@ -3,17 +3,16 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if params[:username] == "" || params[:password] == "" || params[:confirm_password] == ""
-      @error = "You must fill in all fields correctly"
+    @user = User.find_by(username: params[:user][:username])
+    if @user && @user.authenticate(params[:user][:password])
+      session[:user_id] = @user.id
+      redirect_to families_path
+    elsif @user
+      @errors = ["Invalid Password"]
       render :new
     else
-      @user = User.find_by(username: params[:username])
-      if @user && @user.authenticate(params[:password])
-        session[:user_id] = @user.id
-        redirect_to families_path
-      else
-        render :new
-      end
+      @errors = ["Invalid Username"]
+      render :new
     end
   end
 

@@ -1,21 +1,19 @@
 <div class="login">
 <h1>Login</h1>
 
-<% if @error %>
-<h4>*<%= @error %></h4>
+<% @errors && @errors.each do |e| %>
+<li><%= e %></li>
 <% end %>
 
-<%= form_tag login_path do %>
 
-<div><%= label_tag "Username" %>
-     <%= text_field_tag :username %></div>
 
-<div><%= label_tag "Password" %>
-     <%= password_field_tag :password %></div>
-
-<div><%= label_tag "Confirm Password" %>
-     <%= password_field_tag :password_confirmation %></div><br>
-
-<%= submit_tag "Login" %>
-<% end %> 
+<%= form_for :user do |f| %>
+<%= f.label "Username" %>
+<%= f.text_field :username %>
+<%= f.label "Password" %>
+<%= f.password_field :password%>
+<%= f.submit "Log In" %>
+<% end %>
 </div>
+
+
