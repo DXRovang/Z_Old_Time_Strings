@@ -16,6 +16,18 @@ class SessionsController < ApplicationController
     end
   end
 
+  def create_with_fb
+    user = User.find_or_create_by(username: self.request.env['ominauth.auth']['info']['email']) do |u| 
+      u.password = 'password'
+    end
+    if user.save
+      session[:user_id] = user.id
+      redirect_to user_path(user)
+    else
+      render :new
+    end
+  end
+  
   def destroy
     session.clear
     redirect_to "/login"
