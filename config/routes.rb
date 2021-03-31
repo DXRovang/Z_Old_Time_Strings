@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   resources :makers, only: [:index, :show]
   resources :instruments
 
+  get '/auth/facebook/callback', to: 'sessions#create_with_fb'
+
   end 
 
 
