@@ -23,9 +23,19 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find_by(id: params[:id])
+    if params[:id].to_i != session[:user_id]
+      redirect_to user_path(@user)
+    end
   end
 
   def update
+    @user = User.find_by(id: params[:id])
+    if @user.update(user_params)
+      redirect_to user_path(@user)
+    else
+      render :new
+    end
   end
 
   def delete
