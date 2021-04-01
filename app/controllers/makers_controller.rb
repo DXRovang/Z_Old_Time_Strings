@@ -1,8 +1,7 @@
 class MakersController < ApplicationController
   def index
     if params[:search]
-      @makers = Maker.all.where("name = ?", params[:search])
-      @makers = Maker.all.where("name LIKE ?", "%#{params[:search]}%")
+      @makers = Maker.search(params[:search])
     end
   end
 
