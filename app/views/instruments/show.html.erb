@@ -62,7 +62,7 @@
 </div>
 
 <% if session[:user_id] == @instrument.user.id %>
-<%= link_to "Edit", edit_instrument_path(@instrument.id) %>
+<button class="edit"><%= link_to "Edit", edit_instrument_path(@instrument.id) %></button>
 <%= button_to "Delete", @instrument, method: :delete, data: { confirm: "Really?" } %>
 <% end %><br><br>
 
