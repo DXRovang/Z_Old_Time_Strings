@@ -36,7 +36,6 @@ before_action(:require_login)
     if @instrument.user_id != current_user.id
       redirect_to instruments_path
     else
-      # binding.pry
       if (1..4).to_a.include?(@instrument.category_id.to_i)
         @family = Family.find_by(id: 1)
       elsif (8..15).to_a.include?(@instrument.category_id.to_i)
