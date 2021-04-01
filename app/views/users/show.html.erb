@@ -1,7 +1,9 @@
 <div class="title show"><h1><%= @user.username %>'s Page</h1>
 <%= @user.email %><br><br></div>
 <% if @user.id == session[:user_id] %>
-<%= button_to "Edit My Info", edit_user_path(@user), method: :get %>
+<button><%= link_to "Edit My Info", edit_user_path(@user) %></button>
+<%= button_to "Delete My Account", user_path(@user), method: :delete %>
+
 <% end %>
 <h3>Available Instruments</h3>
 

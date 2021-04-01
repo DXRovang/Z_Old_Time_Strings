@@ -38,10 +38,20 @@ class UsersController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
+    @user = User.find_by(id: params[:id])
+    if params[:id].to_i != session[:user_id]
+      redirect_to user_path(@user)
+    end
+    @user.instruments.each do |i|
+      i.destroy
+    end
+    @user.destroy
+    redirect_to signup_path
   end
 
   private
+
 
   def user_params
     params.require(:user).permit(
