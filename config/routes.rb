@@ -13,12 +13,12 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show] do
-    resources :instruments 
+    resources :instruments, only: [:new]
   end
 
   resources :categories, only: [:index, :show]
   resources :makers, only: [:index, :show]
-  resources :instruments
+  resources :instruments, except: [:new]
 
   get '/auth/facebook/callback', to: 'sessions#create_with_fb'
 
