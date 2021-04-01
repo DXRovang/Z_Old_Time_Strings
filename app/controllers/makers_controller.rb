@@ -1,4 +1,5 @@
 class MakersController < ApplicationController
+  
   def index
     if params[:search]
       @makers = Maker.search(params[:search])

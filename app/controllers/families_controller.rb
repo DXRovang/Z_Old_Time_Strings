@@ -5,7 +5,7 @@ class FamiliesController < ApplicationController
     @families = Family.all
   end
 
-  def show #is this necessary?
+  def show
     @family = Family.find_by(id: params[:id])
   end
 end
