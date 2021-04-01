@@ -16,11 +16,11 @@ before_action(:require_login)
     if @instrument.save 
       redirect_to instrument_path(@instrument)
     else
-      if (1..4).to_a.include?(instrument_params[:category_id].to_i)
+      if banjo
         @family = Family.find_by(id: 1)
-      elsif (8..15).to_a.include?(instrument_params[:category_id].to_i)
+      elsif guitar
         @family = Family.find_by(id: 2)
-      elsif (5..7).to_a.include?(instrument_params[:category_id].to_i)
+      elsif mandolin 
         @family = Family.find_by(id: 3)
       end
       render :new
@@ -36,11 +36,12 @@ before_action(:require_login)
     if @instrument.user_id != current_user.id
       redirect_to instruments_path
     else
-      if (1..4).to_a.include?(@instrument[:category_id].to_i)
+      # binding.pry
+      if (1..4).to_a.include?(@instrument.category_id.to_i)
         @family = Family.find_by(id: 1)
-      elsif (8..15).to_a.include?(@instrument[:category_id].to_i)
+      elsif (8..15).to_a.include?(@instrument.category_id.to_i)
         @family = Family.find_by(id: 2)
-      elsif (5..7).to_a.include?(@instrument[:category_id].to_i)
+      elsif (5..7).to_a.include?(@instrument.category_id.to_i)
         @family = Family.find_by(id: 3)
       end
     end
