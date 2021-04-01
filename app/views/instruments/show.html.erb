@@ -6,15 +6,9 @@
   <h1>Currently Not For Sale</h1>
 <% end %>
 
-<div>Category:
-<%= @instrument.category.name %></div>
-<div>Maker:
-<%= @instrument.maker.name %></div>
-
-<% if @instrument.year %>
-<div>Year:
-<%= @instrument.year %></div>
-<% end %>
+<div>Category: <%= @instrument.category.name %></div>
+<div>Maker: <%= @instrument.maker.name %></div>
+<div>Year: <%= @instrument.year %></div>
 
 <% if @instrument.color != "" && @instrument.color != nil %>
 <div>Color:
@@ -68,13 +62,9 @@
 </div>
 
 <% if session[:user_id] == @instrument.user.id %>
-
 <%= link_to "Edit", edit_instrument_path(@instrument.id) %>
-
 <%= button_to "Delete", @instrument, method: :delete, data: { confirm: "Really?" } %>
-<% end %>
-
-<br><br>
+<% end %><br><br>
 
 <div>Username:
 <%= link_to @instrument.user.username, user_path(@instrument.user) %></div>
