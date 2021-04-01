@@ -8,15 +8,16 @@ Specs:
 - [x] Include at least one many-to-many relationship (User has_many Categories through Instruments, Category has_many Users through Instruments)
 - [x] The "through" part of the has_many through includes at least one user submittable attribute, that is to say, some attribute other than its foreign keys that can be submitted by the app's user (instrument.year)
 - [x] Include reasonable validations for simple model objects (User: username, email - presence & uniqueness)
-- [x] Include a class level ActiveRecord scope method 
-Maker.search URL: /makers)
-- [x] Include signup (how e.g. Devise)
-- [x] Include login (how e.g. Devise)
-- [x] Include logout (how e.g. Devise)
-- [x] Include third party signup/login (how e.g. Devise/OmniAuth)
-- [x] Include nested resource show or index (URL e.g. users/2/recipes)
-- [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
-- [x] Include form display of validation errors (form URL e.g. /recipes/new)
+- [x] Include a class level ActiveRecord scope method (Maker.search URL: /makers)
+- [x] Include signup (User.new)
+- [x] Include login (session[:user_id] = @user.id)
+- [x] Include logout (session.clear)
+- [x] Include third party signup/login (OmniAuth-Facebook)
+- [x] Include nested resource show or index (families/1/categories)
+
+- [x] Include nested resource "new" form (instruments/new?family%5Bid%5D=1)
+(URL e.g. recipes/1/ingredients/new)
+- [x] Include form display of validation errors (?)
 
 Confirm:
 - [x] The application is pretty DRY
