@@ -4,7 +4,6 @@
       <%= pluralize(instrument.errors.count, "error") %>
       when trying to process your information.
     </h2>
-    
     <ul>
     <% instrument.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
@@ -23,7 +22,6 @@
 <% end %>
 
 <div><%= form.label "Maker" %></div>
-
 <%= form.text_field :maker_name, list: "makers_autocomplete" %>
 <datalist id="makers_autocomplete">
 <% Maker.all.each do |maker| %>
@@ -42,7 +40,6 @@
 <div><%= form.label "Frets"%></div>
 <%= form.number_field :frets%>
 
-
 <% if family.id == 1 %>
   <div><%= form.label "Back"%></div>
   <%= form.text_field :back%>
@@ -55,3 +52,6 @@
   <div><%= form.label "Sound_hole"%></div>
   <%= form.text_field :sound_hole%>
 <% end %>
+
+<div><%= form.label "Description"%></div>
+     <%= form.text_area :description%>

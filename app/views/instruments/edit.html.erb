@@ -12,12 +12,10 @@ Mandolin
 
 <%= form_for @instrument do |form| %>
 
-<%= render partial: "instruments/attributes1", locals: { form: form, family: @family, instrument: @instrument  } %>
+<%= render partial: "instruments/attributes", locals: { form: form, family: @family, instrument: @instrument  } %>
 
 <div><%= form.label "For Sale"%></div>
      <%= form.text_field :for_sale%>
-<div><%= form.label "Description"%></div>
-     <%= form.text_area :description%>
 
-<div><%= form.submit "Edit Instrument"%></div> 
+<div><%= form.submit "Edit Instrument"%></div>
 <% end %>
