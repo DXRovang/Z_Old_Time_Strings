@@ -13,7 +13,7 @@ to the Database
 
 <%= form_for @instrument do |form| %>
 
-<%= render partial: "instruments/attributes", locals: { form: form, family: @family, instrument: @instrument } %>
+<%= render partial: "instruments", locals: { form: form, family: @family, instrument: @instrument } %>
 
 <div><%= form.submit "Add Instrument"%></div> 
 <% end %>
