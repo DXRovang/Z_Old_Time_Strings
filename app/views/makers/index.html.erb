@@ -10,6 +10,7 @@
   <% @makers.each do |maker| %>
     <h3><%= link_to maker.name, maker_path(maker) %></h3>
   <% end %>
+
   <ul>
   <% @makers.each do |maker| %>
     <% maker.instruments.each do |instrument| %>
