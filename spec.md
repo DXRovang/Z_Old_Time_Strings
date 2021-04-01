@@ -14,9 +14,11 @@ Specs:
 - [x] Include logout (session.clear)
 - [x] Include third party signup/login (OmniAuth-Facebook)
 - [x] Include nested resource show or index (families/1/categories)
+
 - [x] Include nested resource "new" form (instruments/new?family%5Bid%5D=1)
 (URL e.g. recipes/1/ingredients/new)
-- [x] Include form display of validation errors (form URL e.g. /recipes/new)
+
+- [x] Include form display of validation errors 
 
 Confirm:
 - [x] The application is pretty DRY

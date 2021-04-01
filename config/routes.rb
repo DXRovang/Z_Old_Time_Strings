@@ -12,6 +12,10 @@ Rails.application.routes.draw do
     resources :categories, only: [:index]
   end
 
+  resources :users, only: [:show] do
+    resources :instruments 
+  end
+
   resources :categories, only: [:index, :show]
   resources :makers, only: [:index, :show]
   resources :instruments
