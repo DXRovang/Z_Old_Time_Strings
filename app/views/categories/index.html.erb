@@ -19,7 +19,6 @@
 <h3><%= i.category.name %>s for sale:</h3>
 <% end %> 
  
-
 <% @instruments.each do |instrument|%>
   <div class="search">
   <li><%= instrument.year %> <%= link_to instrument.maker.name, instrument_path(instrument) %> 
