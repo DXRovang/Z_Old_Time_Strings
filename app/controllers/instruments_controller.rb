@@ -29,11 +29,11 @@ before_action(:require_login)
   end
 
   def show
-    @instrument = Instrument.find(params[:id])
+    set_instrument
   end
 
   def edit
-    @instrument = Instrument.find(params[:id])
+    set_instrument
     if @instrument.user_id != current_user.id
       redirect_to instruments_path
     else
@@ -48,13 +48,13 @@ before_action(:require_login)
   end
 
   def update
-    @instrument = Instrument.find(params[:id])
+    set_instrument
     @instrument.update(instrument_params)
     redirect_to instrument_path(@instrument)
   end
 
   def destroy
-    @instrument = Instrument.find_by(id: params[:id])
+    set_instrument
     if @instrument.user_id != current_user.id
       redirect_to instruments_path
     else
@@ -64,6 +64,10 @@ before_action(:require_login)
   end
 
   private
+
+  def set_instrument
+    @instrument = Instrument.find_by(id: params[:id])
+  end
 
   def instrument_params
     params.require(:instrument).permit(
