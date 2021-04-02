@@ -1,5 +1,6 @@
 class InstrumentsController < ApplicationController
 before_action(:require_login)
+before_action :set_instrument, only: [:show, :edit, :update, :destroy]
 
   def index
     @instruments = Instrument.all
@@ -29,11 +30,11 @@ before_action(:require_login)
   end
 
   def show
-    set_instrument
+    # set_instrument
   end
 
   def edit
-    set_instrument
+    # set_instrument
     if @instrument.user_id != current_user.id
       redirect_to instruments_path
     else
@@ -48,13 +49,13 @@ before_action(:require_login)
   end
 
   def update
-    set_instrument
+    # set_instrument
     @instrument.update(instrument_params)
     redirect_to instrument_path(@instrument)
   end
 
   def destroy
-    set_instrument
+    # set_instrument
     if @instrument.user_id != current_user.id
       redirect_to instruments_path
     else
