@@ -19,18 +19,18 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by(id: params[:id])
+    set_user
   end
 
   def edit
-    @user = User.find_by(id: params[:id])
+    set_user
     if params[:id].to_i != session[:user_id]
       redirect_to user_path(@user)
     end
   end
 
   def update
-    @user = User.find_by(id: params[:id])
+    set_user
     if @user.update(user_params)
       redirect_to user_path(@user)
     else
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find_by(id: params[:id])
+    set_user
     if params[:id].to_i != session[:user_id]
       redirect_to user_path(@user)
     end
@@ -52,6 +52,9 @@ class UsersController < ApplicationController
 
   private
 
+  def set_user
+    @user = User.find_by(id: params[:id])
+  end
 
   def user_params
     params.require(:user).permit(
