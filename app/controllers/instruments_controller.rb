@@ -16,6 +16,7 @@ before_action(:require_login)
     if @instrument.save 
       redirect_to instrument_path(@instrument)
     else
+      #nightmare
       if (1..4).to_a.include?(instrument_params[:category_id].to_i)
         @family = Family.find_by(id: 1)
       elsif (8..15).to_a.include?(instrument_params[:category_id].to_i)
