@@ -4,5 +4,6 @@ class Maker < ApplicationRecord
   has_many :users, through: :instruments
 
   scope :search, ->(name) { where("name LIKE ?", name) }
+  
 end
  
