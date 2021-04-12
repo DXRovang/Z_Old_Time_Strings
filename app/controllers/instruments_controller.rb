@@ -7,6 +7,7 @@ before_action :set_instrument, only: [:show, :edit, :update, :destroy]
   end
 
   def new
+    #linked from the families index page & routed through nested users
     @instrument = Instrument.new 
     @family = Family.find_by(id: params[:family][:id])
   end
@@ -17,7 +18,7 @@ before_action :set_instrument, only: [:show, :edit, :update, :destroy]
     if @instrument.save 
       redirect_to instrument_path(@instrument)
     else
-      #nightmare
+      #this is a nightmare, fixed with new schema
       if (1..4).to_a.include?(instrument_params[:category_id].to_i)
         @family = Family.find_by(id: 1)
       elsif (8..15).to_a.include?(instrument_params[:category_id].to_i)

@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  #using helper_method allows current_user to be used in views
   helper_method :current_user
 
   def current_user

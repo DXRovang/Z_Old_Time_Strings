@@ -6,6 +6,7 @@ class FamiliesController < ApplicationController
   end
 
   def show
+    #currently unused
     @family = Family.find_by(id: params[:id])
   end
 end

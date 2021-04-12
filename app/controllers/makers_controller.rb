@@ -7,6 +7,7 @@ class MakersController < ApplicationController
   end
 
   def show
+    #currently unused if no instruments have this maker
     @maker = Maker.find_by(id: params[:id])
   end
 

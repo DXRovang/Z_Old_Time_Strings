@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
   
   def new
+    #renamed login
   end
 
   def create

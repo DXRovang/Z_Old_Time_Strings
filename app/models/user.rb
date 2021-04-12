@@ -10,4 +10,5 @@ class User < ApplicationRecord
   has_many :categories, through: :instruments
   has_many :makers, through: :instruments
 
+
 end

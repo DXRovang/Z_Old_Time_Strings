@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def new
+    #renamed signup
     @user = User.new
   end 
 
@@ -23,6 +24,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    #probably could achieve this with if !current_user
     if params[:id].to_i != session[:user_id]
       redirect_to user_path(@user)
     end
@@ -37,6 +39,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    #should create a helper method for this & edit
     if params[:id].to_i != session[:user_id]
       redirect_to user_path(@user)
     end
