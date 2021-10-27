@@ -3,7 +3,7 @@ before_action(:require_login)
 before_action :set_instrument, only: [:show, :edit, :update, :destroy]
 
   def index
-    @instruments = Instrument.all
+    @instruments = Instrument.all.order(:price)
   end
 
   def new
@@ -18,7 +18,7 @@ before_action :set_instrument, only: [:show, :edit, :update, :destroy]
     if @instrument.save 
       redirect_to instrument_path(@instrument)
     else
-      #this is a nightmare, fixed with new schema
+      #this is a nightmare, fixed with new schema - also fixes family index
       if (1..4).to_a.include?(instrument_params[:category_id].to_i)
         @family = Family.find_by(id: 1)
       elsif (8..15).to_a.include?(instrument_params[:category_id].to_i)
@@ -26,7 +26,7 @@ before_action :set_instrument, only: [:show, :edit, :update, :destroy]
       elsif (5..7).to_a.include?(instrument_params[:category_id].to_i)
         @family = Family.find_by(id: 3)
       end
-      render :new
+      render :new 
     end
   end
 

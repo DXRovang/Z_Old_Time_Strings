@@ -15,4 +15,6 @@ module InstrumentsHelper
     Category.where(id: [8...16])
   end
 
+  
+
 end
