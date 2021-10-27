@@ -5,9 +5,6 @@ class Instrument < ApplicationRecord
 
   validates_presence_of :price, :year, :maker_name
  
-
-
-
   def user_name=(name) #shouldn't need _or_create
     self.user = User.find_by(username: name)
   end
