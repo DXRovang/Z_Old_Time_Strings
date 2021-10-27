@@ -1,6 +1,6 @@
 # README  
 
--This app is using Ruby 2.7.2 (rvm use 2.7.2)  
+-This app is using Ruby 2.6.1 (rvm use 2.6.1)  
 -bundle install  
 -rails s  
 -first time users should navigate to '/signup'  
