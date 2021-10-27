@@ -6,15 +6,18 @@ before_action :set_instrument, only: [:show, :edit, :update, :destroy]
     @instruments = Instrument.all
   end
 
-  def new
+  def new 
+    # binding.pry
     #linked from the families index page & routed through nested users
     @instrument = Instrument.new 
     @family = Family.find_by(id: params[:family][:id])
   end
 
   def create
+    # binding.pry
     @instrument = Instrument.new(instrument_params)
     @instrument.user_id = current_user.id
+    binding.pry
     if @instrument.save 
       redirect_to instrument_path(@instrument)
     else
