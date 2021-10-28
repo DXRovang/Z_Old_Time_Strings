@@ -17,7 +17,7 @@ before_action :set_instrument, only: [:show, :edit, :update, :destroy]
     # binding.pry
     @instrument = Instrument.new(instrument_params)
     @instrument.user_id = current_user.id
-    binding.pry
+    # binding.pry
     if @instrument.save 
       redirect_to instrument_path(@instrument)
     else
