@@ -15,6 +15,7 @@ category = Category.create([
   { name: "4-string Banjo", family_id: 1 },
   { name: "5-string Banjo", family_id: 1 },
   { name: "Plectrum Banjo", family_id: 1 },
+  { name: "Tenor Banjo", family_id: 1 },
   { name: "Electric Solid-Body", family_id: 2 },
   { name: "Hollow-body", family_id: 2  },
   { name: "Semi-hollow", family_id: 2  },
@@ -23,7 +24,6 @@ category = Category.create([
   { name: "Resonator", family_id: 2  },
   { name: "Pedal Steel", family_id: 2  },
   { name: "Nylon-string", family_id: 2  },
-  { name: "Tenor Banjo", family_id: 1 },
   { name: "Archtop Mandolin", family_id: 3 }, 
   { name: "Bowlback Mandolin", family_id: 3 },
   { name: "Flatback Mandolin", family_id: 3 }
