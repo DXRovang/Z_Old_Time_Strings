@@ -10,3 +10,4 @@ class ApplicationController < ActionController::Base
     redirect_to "/login" if !current_user
   end
 end
+#testing
